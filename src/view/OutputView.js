@@ -14,7 +14,7 @@ class OutputView {
       Console.print(`${car.name} : ${"-".repeat(car.position)}`);
     });
 
-    this.#printLineBreak;
+    this.#printLineBreak();
   }
 
   #printLineBreak() {
