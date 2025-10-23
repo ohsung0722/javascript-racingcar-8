@@ -5,6 +5,10 @@ class OutputView {
     Console.print(`[ERROR] ${errorMessage}`);
   }
 
+  printResultTitle() {
+    Console.print("실행 결과");
+  }
+
   printWinner(winners) {
     Console.print(`최종 우승자 : ${winners.join(", ")}`);
   }
