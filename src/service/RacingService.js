@@ -16,3 +16,5 @@ class RacingService {
     this.outputView.printWinners(this.racingGame.getWinners());
   }
 }
+
+export default RacingService;
