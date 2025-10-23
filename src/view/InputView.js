@@ -4,7 +4,7 @@ import { validateNotEmpty } from "../utils/Validator.js";
 
 class InputView {
   async inputCars() {
-    const input = await Console.readFileAsync(
+    const input = await Console.readLineAsync(
       "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)"
     );
 
@@ -14,7 +14,7 @@ class InputView {
   }
 
   async inputTry() {
-    const input = await Console.readFileAsync("시도할 횟수는 몇 회인가요?");
+    const input = await Console.readLineAsync("시도할 횟수는 몇 회인가요?");
 
     validateNotEmpty(input, "시도 횟수를 입력해야 합니다.");
 
