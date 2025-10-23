@@ -1,11 +1,8 @@
-import Car from "./Car";
+import Car from "./Car.js";
 
 class RacingGame {
-  #Car;
-
   constructor(names, count) {
-    this.#Car = new Car();
-    this.cars = names.map((name) => this.#Car(name));
+    this.cars = names.map((name) => new Car(name));
     this.count = count;
   }
 
