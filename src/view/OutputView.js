@@ -9,7 +9,7 @@ class OutputView {
     Console.print("실행 결과");
   }
 
-  printWinner(winners) {
+  printWinners(winners) {
     Console.print(`최종 우승자 : ${winners.join(", ")}`);
   }
 
