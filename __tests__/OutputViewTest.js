@@ -24,7 +24,7 @@ describe("OutputView", () => {
   //printWinner테스트 (단일 우승자)
   test("우승자가 1명일 경우 정확히 우승자 이름을 출력한다.", () => {
     const winners = ["A"];
-    outputView.printWinner(winners);
+    outputView.printWinners(winners);
 
     expect(Console.print).toHaveBeenCalledWith("최종 우승자 : A");
   });
@@ -32,7 +32,7 @@ describe("OutputView", () => {
   //printWinner테스트 (멀티 우승자)
   test("우승자가 여러 명일 경우 쉼표로 구분해 출력한다.", () => {
     const winners = ["A", "B", "C"];
-    outputView.printWinner(winners);
+    outputView.printWinners(winners);
 
     expect(Console.print).toHaveBeenCalledWith("최종 우승자 : A, B, C");
   });
