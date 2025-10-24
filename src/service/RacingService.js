@@ -1,5 +1,3 @@
-import { delay } from "../utils/DelayUtil.js";
-
 class RacingService {
   constructor(racingGame, outputView) {
     this.racingGame = racingGame;
