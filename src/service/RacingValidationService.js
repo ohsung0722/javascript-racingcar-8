@@ -8,12 +8,12 @@ import {
 
 class RacingValidationService {
   validateCarNames(names) {
-    validateNoDuplicates(names, "자동차 이름은 중복될 수 없습니다.");
-
     names.forEach((name) => {
       validateNotEmpty(name, "자동차 이름은 비어있을 수 없습니다.");
       validateMaxLength(name, 5, "자동차 이름");
     });
+
+    validateNoDuplicates(names, "자동차 이름은 중복될 수 없습니다.");
   }
 
   validateTryCount(count) {
