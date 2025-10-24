@@ -4,7 +4,7 @@ import {
   validateNoDuplicates,
   validateNotEmpty,
   validatePositiveNumber,
-} from "../utils/Validator";
+} from "../utils/Validator.js";
 
 class RacingValidationService {
   validateCarNames(names) {
