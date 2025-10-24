@@ -1,16 +1,17 @@
 import { Console } from "@woowacourse/mission-utils";
+import { ERROR_PREFIX, OUTPUT_MESSAGE } from "../constants/message.js";
 
 class OutputView {
   printError(errorMessage) {
-    Console.print(`[ERROR] ${errorMessage}`);
+    Console.print(`${ERROR_PREFIX} ${errorMessage}`);
   }
 
   printResultTitle() {
-    Console.print("실행 결과");
+    Console.print(OUTPUT_MESSAGE.RESULT_TITLE);
   }
 
   printWinners(winners) {
-    Console.print(`최종 우승자 : ${winners.join(", ")}`);
+    Console.print(`${OUTPUT_MESSAGE.WINNER_TITLE}${winners.join(", ")}`);
   }
 
   printRound(cars) {

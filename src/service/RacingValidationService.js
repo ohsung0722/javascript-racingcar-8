@@ -1,3 +1,4 @@
+import { CAR_NAME, VALIDATION_MESSAGE } from "../constants/message.js";
 import {
   validateInteger,
   validateMaxLength,
@@ -9,16 +10,16 @@ import {
 class RacingValidationService {
   validateCarNames(names) {
     names.forEach((name) => {
-      validateNotEmpty(name, "자동차 이름은 비어있을 수 없습니다.");
-      validateMaxLength(name, 5, "자동차 이름");
+      validateNotEmpty(name, VALIDATION_MESSAGE.CAR_NAME.EMPTY);
+      validateMaxLength(name, 5, CAR_NAME);
     });
 
-    validateNoDuplicates(names, "자동차 이름은 중복될 수 없습니다.");
+    validateNoDuplicates(names, VALIDATION_MESSAGE.CAR_NAME.DUPLICATE);
   }
 
   validateTryCount(count) {
-    validatePositiveNumber(count, "시도 횟수는 1 이상의 숫자여야 합니다.");
-    validateInteger(count, "시도 횟수는 정수여야 합니다.");
+    validatePositiveNumber(count, VALIDATION_MESSAGE.TRY_COUNT.NOT_POSITIVE);
+    validateInteger(count, VALIDATION_MESSAGE.TRY_COUNT.NOT_INTEGER);
   }
 }
 

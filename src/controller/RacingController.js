@@ -1,3 +1,4 @@
+import { ERROR_PREFIX } from "../constants/message.js";
 import IOFactory from "../factory/IOFactory.js";
 import RacingGame from "../model/RacingGame.js";
 import RacingService from "../service/RacingService.js";
@@ -24,7 +25,7 @@ class RacingController {
       service.start(tryCount);
     } catch (error) {
       this.outputView.printError(error.message);
-      throw new Error(`[ERROR] ${error.message}`);
+      throw new Error(`${ERROR_PREFIX} ${error.message}`);
     }
   }
 }

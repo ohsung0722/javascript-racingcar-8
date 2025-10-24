@@ -1,6 +1,8 @@
+import { VALIDATION_MESSAGE } from "../constants/message.js";
+
 export function validateNotEmpty(
   value,
-  errorMessage = "값이 비어있을 수 없습니다."
+  errorMessage = VALIDATION_MESSAGE.DEFAULT.EMPTY
 ) {
   if (!value || value.length === 0) {
     throw new Error(errorMessage);
@@ -9,13 +11,15 @@ export function validateNotEmpty(
 
 export function validateMaxLength(value, maxLength = 5, fieldName) {
   if (value.length > maxLength) {
-    throw new Error(`${fieldName}은(는) ${maxLength}자 이하만 가능합니다.`);
+    throw new Error(
+      VALIDATION_MESSAGE.DEFAULT.MAX_LENGTH(fieldName, maxLength)
+    );
   }
 }
 
 export function validateNoDuplicates(
   list,
-  errorMessage = "중복된 값이 존재합니다."
+  errorMessage = VALIDATION_MESSAGE.DEFAULT.DUPLICATE
 ) {
   const uniqueCount = new Set(list).size;
 
@@ -26,7 +30,7 @@ export function validateNoDuplicates(
 
 export function validatePositiveNumber(
   value,
-  errorMessage = "1 이상의 숫자만 입력할 수 있습니다."
+  errorMessage = VALIDATION_MESSAGE.DEFAULT.POSITIVE_NUMBER
 ) {
   if (isNaN(value) || value <= 0) {
     throw new Error(errorMessage);
@@ -35,7 +39,7 @@ export function validatePositiveNumber(
 
 export function validateInteger(
   value,
-  errorMessage = "정수만 입력할 수 있습니다."
+  errorMessage = VALIDATION_MESSAGE.DEFAULT.INTEGER
 ) {
   if (!Number.isInteger(value)) {
     throw new Error(errorMessage);
