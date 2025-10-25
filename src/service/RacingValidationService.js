@@ -10,7 +10,7 @@ import {
 class RacingValidationService {
   validateCarNames(names) {
     names.forEach((name) => {
-      validateNotEmpty(name, VALIDATION_MESSAGE.CAR_NAME.EMPTY);
+      validateNotEmpty(name, VALIDATION_MESSAGE.CAR_NAME.ONLY_COMMA);
       validateMaxLength(name, 5, CAR_NAME);
     });
 
