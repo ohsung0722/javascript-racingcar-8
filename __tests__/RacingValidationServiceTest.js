@@ -34,7 +34,7 @@ describe("RacingValidationService", () => {
       const names = ["", ""];
 
       expect(() => validator.validateCarNames(names)).toThrow(
-        "자동차 이름을 1개 이상 입력해야 합니다."
+        "자동차 이름은 비어있을 수 없습니다."
       );
     });
   });
