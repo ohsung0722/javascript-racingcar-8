@@ -47,7 +47,7 @@ describe("RacingGame", () => {
       "position: %j → getWinners()를 호출하면 winners %j가 반환된다",
       (positions, expected) => {
         const names = ["pobi", "woni", "jun"];
-        const game = new RacingGame([], 3);
+        const game = new RacingGame([], 5);
 
         game.cars = names.map((name, i) => ({
           name,
