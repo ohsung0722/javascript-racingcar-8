@@ -32,15 +32,31 @@ describe("RacingGame", () => {
     expect(mockCar.move).toHaveBeenCalledTimes(2);
   });
 
-  test("각 자동차 위치가 다를 때 getWinners()를 호출하면 최고 위치 자동차가 반환된다.", () => {
-    const game = new RacingGame([], 3);
-    game.cars = [
-      { name: "pobi", position: 3 },
-      { name: "woni", position: 5 },
-      { name: "jun", position: 5 },
-    ];
+  describe("getWinners()", () => {
+    it.each([
+      [
+        [3, 5, 5],
+        ["woni", "jun"],
+      ],
+      [
+        [0, 0, 0],
+        ["pobi", "woni", "jun"],
+      ],
+      [[2, 5, 1], ["woni"]],
+    ])(
+      "position: %j → getWinners()를 호출하면 winners %j가 반환된다",
+      (positions, expected) => {
+        const names = ["pobi", "woni", "jun"];
+        const game = new RacingGame([], 3);
 
-    const winners = game.getWinners();
-    expect(winners).toEqual(["woni", "jun"]);
+        game.cars = names.map((name, i) => ({
+          name,
+          position: positions[i],
+        }));
+
+        const winners = game.getWinners();
+        expect(winners).toEqual(expected);
+      }
+    );
   });
 });
